@@ -1,6 +1,6 @@
 # MTL-XF-036 — B2B Wholesale Customer Segmentation Account Growth Intelligence
 
-**Track:** Cross-Functional · **Sector:** Private-sector commercial operations · **Team:** 6–8 · **Duration:** 8 weeks
+**Track:** Cross-Functional · **Sector:** Private-sector commercial operations · **Team:** 3–5 · **Duration:** 8 weeks
 
 ## The business problem
 
