@@ -36,37 +36,57 @@ Profile types, nulls, duplicates, sentinels, labels, units and source support. A
 
 **Pass evidence:** Every treatment has affected count, reason, owner and reviewer; no silent row loss or coercion.
 
-## D5 — KPI catalogue and lineage
+## D5 — Annual category-spend profile
 
-**Due:** Week 4 · **Owner:** B2B Account Strategy Analyst · **Team location:** docs/05-kpi-catalogue/
+**Due:** Week 4 · **Owner:** B2B Account Strategy Analyst · **Business reviewer:** B2B Sales Director · **Independent reviewer:** Segmentation Assurance Analyst
 
-Implement K1–K7 below with actual source fields, code, valid population, denominator, units, grain, exclusions, owner and worked examples.
+**Required artefact:** data/curated/annual-category-spend-profile.csv and docs/05-kpi-catalogue/annual-category-spend-profile.md.
 
-**Pass evidence:** All seven reviewed; K1–K5 reconcile independently and in BI on full cohort and one filtered slice.
+440 row-keyed customer profiles with six category spends, total, shares, Channel/Region and zero/invalid flags.
 
-## D6 — Analysis and evaluation
+**Mandatory pass condition (SC1):** Totals equal sum of six categories; positive-total shares sum to 1 within 1e−9; monetary units are not relabelled GBP; zero totals yield unavailable shares.
 
-**Due:** Week 6 · **Owner:** Data Scientist / Decision Modelling Analyst · **Team location:** docs/06-analysis/
+**Review evidence:** retain the actual output, source-to-field/code/configuration lineage, expected/actual verification, reviewer and date. A heading, screenshot or unsupported claim alone cannot satisfy this deliverable.
 
-Core is descriptive segmentation. Fit log1p+scaling and compare k=2…6 clustering with seed 36; evaluate bootstrap stability over 50 resamples aligned to original assignments. Channel/Region are excluded from distance features; no supervised growth claims.
 
-**Pass evidence:** Baseline and alternative results, population/class counts, uncertainty, negative findings and feature/timing audit retained; no test-driven tuning.
+## D6 — Segmentation comparison and stability report
 
-## D7 — Decision policy and action register
+**Due:** Week 6 · **Owner:** Data Scientist / Decision Modelling Analyst · **Business reviewer:** B2B Sales Director · **Independent reviewer:** Segmentation Assurance Analyst
 
-**Due:** Week 6 · **Owner:** B2B Account Strategy Analyst · **Team location:** docs/07-decision-framework/
+**Required artefact:** docs/06-analysis/segmentation-comparison-and-stability-report.md plus machine-readable evaluation_results.csv.
 
-Baseline uses Channel groups; alternative uses interpretable spend clusters. Compare raw-spend versus log-scaled clustering sensitivity. A candidate category is below its segment median share while total spend is above segment median; this is an investigation rule, not a predicted sale.
+Channel baseline, k=2…6 log-scaled clustering, silhouette, 50-bootstrap adjusted Rand stability and raw-vs-log sensitivity; segment sizes and spend profiles.
 
-**Pass evidence:** Both policies and sensitivity outputs supplied; every action has evidence, eligibility, owner, next review and uncertainty. Include a defer case.
+**Mandatory pass condition (SC2):** Channel/Region/row IDs excluded from distance; label permutations aligned; select or reject segmentation with explicit stability/interpretability evidence, not silhouette alone.
 
-## D8 — Dashboard / decision prototype
+**Review evidence:** retain the actual output, source-to-field/code/configuration lineage, expected/actual verification, reviewer and date. A heading, screenshot or unsupported claim alone cannot satisfy this deliverable.
 
-**Due:** Week 7 · **Owner:** BI / Decision Product Developer · **Team location:** dashboard/
 
-Four linked views: K1–K7 executive overview, source-supported diagnostics, policy/action comparison and quality/limitations for B2B Sales Director.
+## D7 — Account opportunity register and propositions
 
-**Pass evidence:** Five metric/filter checks pass; frozen scope and limitations survive export; static copy/user guide require no paid access.
+**Due:** Week 6 · **Owner:** B2B Account Strategy Analyst · **Business reviewer:** B2B Sales Director · **Independent reviewer:** Segmentation Assurance Analyst
+
+**Required artefact:** docs/07-decision-framework/account-opportunity-register-and-propositions.csv plus policy.md.
+
+Up to ten below-segment-median category-share/above-median-total cases plus exactly three service propositions, or documented deferrals.
+
+**Mandatory pass condition (SC3):** Every case includes row ID, segment, category share, comparator, total spend, account-manager question and owner; no predicted growth, churn or confirmed cross-sell demand.
+
+**Review evidence:** retain the actual output, source-to-field/code/configuration lineage, expected/actual verification, reviewer and date. A heading, screenshot or unsupported claim alone cannot satisfy this deliverable.
+
+
+## D8 — Account strategy dashboard
+
+**Due:** Week 7 · **Owner:** BI / Decision Product Developer · **Business reviewer:** B2B Sales Director · **Independent reviewer:** Segmentation Assurance Analyst
+
+**Required artefact:** dashboard/README.md, runnable dashboard/prototype and static review export.
+
+Segment profile, channel/region context, stability and candidate register views.
+
+**Mandatory pass condition (SC4):** Reviewer explains one segment in ordinary sales terms, traces a candidate to its six spend values and identifies an unstable/deferred case.
+
+**Review evidence:** retain the actual output, source-to-field/code/configuration lineage, expected/actual verification, reviewer and date. A heading, screenshot or unsupported claim alone cannot satisfy this deliverable.
+
 
 ## D9 — Independent assurance and UAT
 
@@ -84,13 +104,18 @@ One documented run entry point, dependency versions, manifest, output checksums/
 
 **Pass evidence:** Second member reproduces all seven KPIs and policy queue from approved bytes; environment, elapsed time and discrepancies recorded.
 
-## D11 — Executive recommendation
+## D11 — Sales adoption and validation plan
 
-**Due:** Week 8 · **Owner:** Delivery Lead + domain specialist · **Team location:** deliverables/
+**Due:** Week 8 · **Owner:** Business Analyst / Delivery Lead with domain specialist · **Business reviewer:** B2B Sales Director · **Independent reviewer:** Segmentation Assurance Analyst
 
-8–12 slides and a 5–10-minute demo answering Choose three account-service propositions and up to ten cross-sell investigation candidates. Include five evidence-linked findings, three next actions, comparison and a defer case.
+**Required artefact:** deliverables/sales-adoption-and-validation-plan.pdf plus editable slides and supporting cards/runbook.
 
-**Pass evidence:** Every numeric claim links tested evidence; costs/benefits and operational targets are labelled assumptions unless measured.
+Three proposition cards with audience, service change, account-owner role, discovery questions, pilot comparator and success/guardrail measures.
+
+**Mandatory pass condition (SC5):** Each card names evidence needed from account conversations and future transactions; no growth claim from a single annual snapshot.
+
+**Review evidence:** retain the actual output, source-to-field/code/configuration lineage, expected/actual verification, reviewer and date. A heading, screenshot or unsupported claim alone cannot satisfy this deliverable.
+
 
 ## D12 — Contribution and final submission
 

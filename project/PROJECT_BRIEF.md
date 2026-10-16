@@ -6,9 +6,33 @@ This is a simulated confidential-client engagement using public/open data. Stake
 
 ## Problem and commission
 
-Account managers apply one service model to customers with very different category spending. They need interpretable, stable customer groups to focus account conversations without mistaking low category spend for proven unmet demand.
+The wholesale sales director must allocate account-manager attention across customers with different annual category mixes. A customer with high total spend but a low category share may warrant a conversation, but low share alone does not establish unmet demand. The team needs understandable groups, evidence that the grouping is stable, and a shortlist account managers can validate before offering a different service or cross-sell proposition.
 
 > Choose three account-service propositions and up to ten cross-sell investigation candidates.
+
+## Practical use case and business outputs
+
+At quarterly account planning, sales reviews spend profiles and cluster stability, compares them with existing channel groups, and assigns three service propositions and up to ten account-category investigation cases.
+
+| Deliverable | What the team must hand over | Required contents |
+| --- | --- | --- |
+| D5 | Annual category-spend profile | 440 row-keyed customer profiles with six category spends, total, shares, Channel/Region and zero/invalid flags. |
+| D6 | Segmentation comparison and stability report | Channel baseline, k=2…6 log-scaled clustering, silhouette, 50-bootstrap adjusted Rand stability and raw-vs-log sensitivity; segment sizes and spend profiles. |
+| D7 | Account opportunity register and propositions | Up to ten below-segment-median category-share/above-median-total cases plus exactly three service propositions, or documented deferrals. |
+| D8 | Account strategy dashboard | Segment profile, channel/region context, stability and candidate register views. |
+| D11 | Sales adoption and validation plan | Three proposition cards with audience, service change, account-owner role, discovery questions, pilot comparator and success/guardrail measures. |
+
+## Required success contract
+
+| Success ID | Required deliverable | Specific pass condition |
+| --- | --- | --- |
+| SC1 | D5 — Annual category-spend profile | Totals equal sum of six categories; positive-total shares sum to 1 within 1e−9; monetary units are not relabelled GBP; zero totals yield unavailable shares. |
+| SC2 | D6 — Segmentation comparison and stability report | Channel/Region/row IDs excluded from distance; label permutations aligned; select or reject segmentation with explicit stability/interpretability evidence, not silhouette alone. |
+| SC3 | D7 — Account opportunity register and propositions | Every case includes row ID, segment, category share, comparator, total spend, account-manager question and owner; no predicted growth, churn or confirmed cross-sell demand. |
+| SC4 | D8 — Account strategy dashboard | Reviewer explains one segment in ordinary sales terms, traces a candidate to its six spend values and identifies an unstable/deferred case. |
+| SC5 | D11 — Sales adoption and validation plan | Each card names evidence needed from account conversations and future transactions; no growth claim from a single annual snapshot. |
+
+[Detailed acceptance](ACCEPTANCE_CRITERIA.md) defines executed evidence; [deliverables](DELIVERABLES.md) defines exact artefacts and ownership. G1 records simulated sponsor approval, not invented real-client agreement.
 
 ## Core scope
 

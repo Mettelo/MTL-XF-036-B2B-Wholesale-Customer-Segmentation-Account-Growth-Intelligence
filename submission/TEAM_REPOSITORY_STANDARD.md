@@ -24,3 +24,13 @@ Assign named people to all seven [brief roles](../project/PROJECT_BRIEF.md). Eve
 Name segments using observed spend profiles and draft three account propositions with eligibility, outreach owner and evidence to collect.
 
 Maintain D1–D12/AC1–AC12/DT1–DT10 evidence index with owner, distinct reviewer, state and final-commit path. Connect numeric claims to frozen source and code/configuration. Record all manual adjustments, excluded cases and limitations; preserve an insufficient-evidence case.
+
+## Required business-output artefacts
+
+- **D5 Annual category-spend profile:** data/curated/annual-category-spend-profile.csv and docs/05-kpi-catalogue/annual-category-spend-profile.md.
+- **D6 Segmentation comparison and stability report:** docs/06-analysis/segmentation-comparison-and-stability-report.md plus machine-readable evaluation_results.csv.
+- **D7 Account opportunity register and propositions:** docs/07-decision-framework/account-opportunity-register-and-propositions.csv plus policy.md.
+- **D8 Account strategy dashboard:** dashboard/README.md, runnable dashboard/prototype and static review export.
+- **D11 Sales adoption and validation plan:** deliverables/sales-adoption-and-validation-plan.pdf plus editable slides and supporting cards/runbook.
+
+Index these under SC1–SC5 with author, distinct reviewer, executed result and final commit. Treat these paths as the default delivery contract; an equivalent tool-specific format requires an explicit documented mapping.
